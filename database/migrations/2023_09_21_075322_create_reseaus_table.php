@@ -11,7 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('reseaus', function (Blueprint $table) {
+            $table->id();
+
+            $table->string('libelle',75);
+            $table->string('lan', 20);
+            $table->boolean('is_disponible')->default(true);
+
+            $table->timestamps();
+        });
     }
 
     /**
@@ -19,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('reseaus');
     }
 };

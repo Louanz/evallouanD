@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Gestion>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Reseau>
  */
-class GestionFactory extends Factory
+class ReseauFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,9 @@ class GestionFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'libelle' => fake()->words(3, true),
+            'lan' => fake()->word(),
+            'is_disponible' => fake()->boolean()
         ];
     }
 }

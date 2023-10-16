@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Reseau;
+
 
 class AccueilController extends Controller
 {
@@ -10,6 +12,6 @@ class AccueilController extends Controller
     {
         $reseaux = Reseau::withCount('serveurs', 'ordinateurs')->get();
 
-        return view('accueil', compact('reseaux'));
+        return view('accueil', compact('reseau'));
     }
 }

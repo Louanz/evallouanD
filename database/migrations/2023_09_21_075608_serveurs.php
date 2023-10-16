@@ -11,7 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('serveurs', function (Blueprint $table) {
+            $table->id();
+
+            $table->integer('ip');
+            $table->string('type',30);
+            $table->string('os',30);
+       //     $table->foreignIdFor(Reseau::class)->constrained();
+
+            $table->timestamps();
+        });
     }
 
     /**
@@ -22,3 +31,5 @@ return new class extends Migration
         //
     }
 };
+
+
